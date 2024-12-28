@@ -1,0 +1,56 @@
+Great, since the server is already running, let me help you test all the API endpoints using Postman. Here are the endpoints and their details:
+
+GET /api/mahasiswa (Get All Mahasiswa)
+URL: http://localhost:8000/api/mahasiswa
+Method: GET
+Description: Returns all mahasiswa records
+No request body needed
+POST /api/mahasiswa (Create New Mahasiswa)
+URL: http://localhost:8000/api/mahasiswa
+Method: POST
+Headers:
+Content-Type: application/json
+Request Body (JSON):
+    {
+        "nim": "123456",
+        "nama": "John Doe",
+        "alamat": "Jl. Example No. 123",
+        "tanggal_lahir": "2000-01-01",
+        "fakultas": "Teknik",
+        "prodi": "Informatika"
+    }
+Required fields: nim, nama, alamat, tanggal_lahir, fakultas, prodi
+Note: nim must be unique
+GET /api/mahasiswa/{id} (Get Single Mahasiswa)
+URL: http://localhost:8000/api/mahasiswa/1 (replace 1 with actual ID)
+Method: GET
+Description: Returns a single mahasiswa record by ID
+No request body needed
+PUT /api/mahasiswa/{id} (Update Mahasiswa)
+URL: http://localhost:8000/api/mahasiswa/1 (replace 1 with actual ID)
+Method: PUT
+Headers:
+Content-Type: application/json
+Request Body (JSON):
+{
+    "nim": "123456",
+    "nama": "John Doe Updated",
+    "alamat": "Jl. Example No. 123 Updated",
+    "tanggal_lahir": "2000-01-01",
+    "fakultas": "Teknik",
+    "prodi": "Informatika"
+}
+You can update any of these fields
+DELETE /api/mahasiswa/{id} (Delete Mahasiswa)
+URL: http://localhost:8000/api/mahasiswa/1 (replace 1 with actual ID)
+Method: DELETE
+Description: Deletes a mahasiswa record
+No request body needed
+Returns success message on successful deletion
+Important Notes:
+
+Make sure your Laravel server is running on port 8000
+For POST and PUT requests, all fields (nim, nama, alamat, tanggal_lahir, fakultas, prodi) are required
+The 'nim' field must be unique when creating or updating records
+Dates should be in YYYY-MM-DD format
+All responses will be in JSON format
